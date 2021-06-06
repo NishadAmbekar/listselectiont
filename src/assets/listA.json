@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "user": "user1",
+    "selected": false
+  },
+  {
+    "id": 2,
+    "user": "user2",
+    "selected": false
+  },
+  {
+    "id": 3,
+    "user": "user3",
+    "selected": false
+  },
+  {
+    "id": 4,
+    "user": "user4",
+    "selected": false
+  },
+  {
+    "id": 5,
+    "user": "user5",
+    "selected": false
+  }
+]

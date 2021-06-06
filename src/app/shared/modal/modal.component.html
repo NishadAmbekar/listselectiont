@@ -1,0 +1,16 @@
+
+<div id="modalWrapper" class="modal-wrapper" aria-hidden="true">
+  <div class="modal-container">
+      <div class="modal-close">
+        <button type="button" (click)="closeModal()" class="close" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+      <div class="form-group">
+        <label for="user">Item: </label>
+        <input id="user" class="form-control" [(ngModel)]="user" />
+      </div>
+      <div class="btn-group modal-btns">
+        <button class="btn" [disabled]="!user" type="button" (click)="sendData('listA')">Add to list A</button>
+        <button class="btn" [disabled]="!user" type="button" (click)="sendData('listB')">Add to list B</button>
+      </div>
+  </div>
+</div>

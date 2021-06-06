@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="block">
+    <div class="header">LIST A</div>
+    <ul *ngIf="listA">
+      <li *ngFor="let item of listAItems.list" (click)="selectItem(item, listAItems.selected)" [ngClass]="item.selected ? 'item-selected' : ''">
+        <span>{{item.user}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="btn-group">
+    <button class="btn" [disabled]="listBItems.selected.length === 0" (click)="moveItems(listBItems, listAItems)">move to list A</button>
+    <button class="btn" [disabled]="listAItems.selected.length === 0" (click)="moveItems(listAItems, listBItems)">move to list B</button>
+    <button class="btn" (click)="showModal = !showModal">add</button>
+    <button class="btn" [disabled]="listBItems.selected.length === 0 && listAItems.selected.length === 0" (click)="delete()">delete</button>
+  </div>
+  <div class="block">
+    <div class="header">LIST B</div>
+    <ul *ngIf="listB">
+      <li *ngFor="let item of listBItems.list" (click)="selectItem(item, listBItems.selected)" [ngClass]="item.selected ? 'item-selected' : ''">
+        <span>{{item.user}}</span>
+      </li>
+    </ul>
+  </div>
+  <app-modal *ngIf="showModal" (addData)="add($event)" (close)="closeModal($event)"></app-modal>
+</div>
